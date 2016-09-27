@@ -607,10 +607,10 @@ public func sampleWithWeights<T>(arrayToSampleFrom: [T], _ weights: [Double], _ 
 }
 
 
-public func randNormals(_ mean: Double, _ standardDeviation: Double, _ sampleRows: Int, _ sampleColumns: Int) -> [[Float]] {
-    var r = [[Float]]()
+public func randNormals(_ mean: Double, _ standardDeviation: Double, _ sampleRows: Int, _ sampleColumns: Int) -> [[Double]] {
+    var r = [[Double]]()
     for _ in 0 ..< sampleRows {
-        let t = randNormals(mean, standardDeviation, sampleColumns).map { Float($0) }
+        let t = randNormals(mean, standardDeviation, sampleColumns)
         r.append(t)
     }
     return r
